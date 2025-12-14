@@ -2,10 +2,11 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
 - family-names: "Ayala-Lara"
-  given-names: "Nicolas"
+  given-names: "Nicolás"
   orcid: "https://orcid.org/0009-0006-4641-1261"
 title: "Calibration with Springs"
 version: 1.0
 date-released: 2025-12-14
 url: "https://github.com/nicoayalageo/Calib_Springs_GW.git"
+
 
