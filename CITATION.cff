@@ -4,9 +4,10 @@ authors:
 - family-names: "Ayala-Lara"
   given-names: "Nicolás"
   orcid: "https://orcid.org/0009-0006-4641-1261"
-title: "Calibration with Springs"
+title: "Python Script: Calibration with Springs"
 version: 1.0
 date-released: 2025-12-14
 url: "https://github.com/nicoayalageo/Calib_Springs_GW.git"
+
 
 
