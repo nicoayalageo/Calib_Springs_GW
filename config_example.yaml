@@ -1,0 +1,53 @@
+# ============================================================================
+# calibrate_springs – Configuration File
+# ============================================================================
+# Copy this file to  config.yaml  and edit the values for your project.
+#
+# Run:
+#   python calibrate_springs.py config.yaml
+#   python calibrate_springs.py config.yaml --validate-only
+#   python calibrate_springs.py config.yaml --keep-intermediates --verbose
+# ============================================================================
+
+paths:
+  # MODFLOW 6 simulation workspace (contains mfsim.nam and all packages)
+  model_dir: /path/to/Model_12/Sim_12.136
+
+  # Digital Elevation Model (GeoTIFF, must share CRS with model)
+  dem: /path/to/DEM.tif
+
+  # Shapefile of spring locations (point geometry).
+  # Required columns: "name" (spring identifier), "altitude" (spring elevation).
+  springs: /path/to/Springs.shp
+
+  # Shapefile of the model domain boundary (polygon geometry)
+  domain: /path/to/Dominium.shp
+
+  # Directory where output CSV (and optional intermediates) will be written
+  output_dir: /path/to/output
+
+model:
+  # Simulation name as registered in mfsim.nam
+  sim_name: Model_v12.136
+
+  # Coordinate reference system (any string accepted by pyproj)
+  crs: "EPSG:32719"
+
+  # Stress period to extract heads from: [time_step, stress_period]
+  stress_period: [0, 0]
+
+  # Layer index used to build the active-cell domain (0-based)
+  layer: 0
+
+dem:
+  # Minimum number of contributing cells to define a stream segment.
+  # Lower values produce a denser drainage network but take longer.
+  stream_threshold: 1000
+
+run:
+  # Maximum distance (in CRS units, typically metres) when snapping
+  # spring points to the drainage network or to filtered endpoints.
+  snap_distance: 20.0
+
+  # Maximum number of upstream-expansion iterations before stopping.
+  max_iterations: 20
